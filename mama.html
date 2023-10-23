@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Consumo de Água nos EUA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz sobre Consumo de Água nos EUA</h1>
+        
+    </header>
+    
+    <main>
+        <form id="quizForm">
+            <h2>Pergunta 1:</h2>
+            <p>Qual estado dos EUA tem o maior consumo per capita de água?</p>
+            <input type="radio" name="q1" value="a"> Califórnia<br>
+            <input type="radio" name="q1" value="b"> Texas<br>
+            <input type="radio" name="q1" value="c"> Nova York<br>
+    
+            <h2>Pergunta 2:</h2>
+            <p>Qual setor consome a maior parte da água nos EUA?</p>
+            <input type="radio" name="q2" value="a"> Agricultura<br>
+            <input type="radio" name="q2" value="b"> Residencial<br>
+            <input type="radio" name="q2" value="c"> Industrial<br>
+    
+            <h2>Pergunta 3:</h2>
+            <p>Qual porcentagem da água doce do mundo é encontrada nos lagos dos EUA?</p>
+            <input type="radio" name="q3" value="a"> 10%<br>
+            <input type="radio" name="q3" value="b"> 20%<br>
+            <input type="radio" name="q3" value="c"> 30%<br>
+    
+            <br><br>
+            <input type="button" value="Verificar Respostas" onclick="verificarRespostas()">
+        </form>
+    
+        <div id="resultado"></div>
+        <img src="MX.png" class="minha">
+        <script>
+            function verificarRespostas() {
+                var pontuacao = 0;
+    
+                var respostas = document.getElementById("quizForm").elements;
+                for (var i = 0; i < respostas.length; i++) {
+                    if (respostas[i].type == "radio" && respostas[i].checked) {
+                        if (respostas[i].value == "a") {
+                            pontuacao++;
+                        }
+                    }
+                }
+    
+                var resultadoDiv = document.getElementById("resultado");
+                resultadoDiv.innerHTML = "<h2>Sua pontuação é: " + pontuacao + " de 3</h2>";
+            }
+        </script>
+    </body>
+    </html>
